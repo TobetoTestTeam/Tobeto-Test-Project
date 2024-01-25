@@ -1,4 +1,5 @@
-# Test Case 4: Eksik karakterli TC kimlik no uyarısı kontrolü
+# Test Senaryosunun Adı: Profil Bilgileri altında kişisel bilgilerin güncellenme kontrolleri 
+# TEST CASE 4: Eksik karakterli TC kimlik no uyarısı kontrolü
 
 # Profil Bilgileri -> Kişisel Bilgilerim Sayfası 
 # https://tobeto.com/profilim/profilimi-duzenle/kisisel-bilgilerim

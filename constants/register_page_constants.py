@@ -1,4 +1,4 @@
-# Kayıt Ol sayfası 
+# Kayıt Ol sayfası Constants
 # https://tobeto.com/kayit-ol
 
 # Kayıt ol ilk form constants

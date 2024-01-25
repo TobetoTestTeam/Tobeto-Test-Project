@@ -1,4 +1,6 @@
-# Test Case3: Geçersiz e-posta uyarı kontrolü
+# Test Senaryosunun Adı: Kayıt Ol
+# TEST CASE 3: Geçersiz Eposta ve doldurması zorunlu alan kontrolü 
+# (TEST case bu şekilde yazılmış ama burada sadece geçersiz e posta girildiğinde alınacak uyarı test ediliyor.)
 
 # Kayıt Ol sayfası 
 # https://tobeto.com/kayit-ol

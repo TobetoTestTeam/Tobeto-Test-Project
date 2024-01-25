@@ -1,4 +1,6 @@
+# Test Senaryosunun Adı: Profil Bilgileri altında kişisel bilgilerin güncellenme kontrolleri 
 # TEST CASE: Hatalı Kimlik Bilgisi uyarısı kontrolü (TC kimlik no hatalı girildiğinde)
+# *not: TC Kimlik ile eşleşmeyen ad soyad ve doğum tarihi girilirse gelen uyarı
 
 # Profil Bilgileri -> Kişisel Bilgilerim Sayfası 
 # https://tobeto.com/profilim/profilimi-duzenle/kisisel-bilgilerim

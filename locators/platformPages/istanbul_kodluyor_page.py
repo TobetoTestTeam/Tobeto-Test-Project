@@ -1,2 +1,5 @@
-# Üst Menü İstanbul Kodluyo sayfası
+# Üst Menü İstanbul Kodluyo sayfası locators
 # https://tobeto.com/istanbul-kodluyor
+
+
+# TO DO : EKLENECEK

@@ -1,3 +1,5 @@
+# Login Sayfası Constants
+# https://tobeto.com/giris
 
 USER_EMAIL_XPATH = "//input[@name=\'email\']"
 USER_PASSWORD_XPATH = "//input[@name=\'password\']"

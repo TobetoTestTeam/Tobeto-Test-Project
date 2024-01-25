@@ -1,3 +1,6 @@
+# Test Senaryosunun Adı: Kullanıcı giriş kontrol
+# TEST CASE 2: Başarısız kullanıcı giriş kontrolü
+
 # Login Page 
 # https://tobeto.com/giris
 

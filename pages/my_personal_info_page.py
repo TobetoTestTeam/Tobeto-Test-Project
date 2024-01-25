@@ -1,9 +1,6 @@
 # Profil Bilgileri -> Kişisel Bilgilerim Sayfası 
 # https://tobeto.com/profilim/profilimi-duzenle/kisisel-bilgilerim
 
-# Login Page 
-# https://tobeto.com/giris
-
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait

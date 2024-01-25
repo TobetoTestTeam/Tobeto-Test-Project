@@ -1,4 +1,7 @@
-# TEST CASE: Yabancı dil ekle
+# Test Senaryosunun Adı: Yabancı dil kaydetme-kaldırma
+# TEST CASE 2: Yabancı dil ve seviyesinin kaydedilmesi ve silinmesi
+
+####################### Yalnızca yeni bir dil ekleme yapılıyor şu an. Düzenlenebilir!!##########################
 
 # Profil Bilgileri -> Yabancı Dillerim Sayfası Locators
 # https://tobeto.com/profilim/profilimi-duzenle/yabanci-dil

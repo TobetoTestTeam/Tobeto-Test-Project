@@ -1,3 +1,6 @@
+# Test Senaryosunun Adı: Kullanıcı giriş kontrol
+# TEST CASE 3 :  Zorunlu alanların boş bırakılması kontrolü.
+
 # Login Page 
 # https://tobeto.com/giris
 

@@ -1,15 +1,11 @@
 # Profil Bilgileri -> Kişisel Bilgilerim Sayfası CONSTANTS
 # https://tobeto.com/profilim/profilimi-duzenle/kisisel-bilgilerim
 
-import os
-
 FIRST_NAME_BYNAME = "name"
 LAST_NAME_BYNAME = "surname"
 PHONE_NUMBER_BYID = "phoneNumber"
 BIRTHDAY_BYNAME = "birthday"
 IDENTIFICATION_NUMBER_BYNAME = "identifier"
-
-IDENTIFICATION_NUMBER = os.getenv("IDENTITY_NUM")
 
 COUNTRY_BYNAME = "country"
 

@@ -18,11 +18,8 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 from pages.login_page import LoginPage
 
-import os
-from dotenv import load_dotenv
-load_dotenv()
-
-import constants.globalConstants as gc
+#import constants.globalConstants as gc
+import constants.credentials_constants as gc
 
 class TestvalidLogin():
   def setup_method(self):

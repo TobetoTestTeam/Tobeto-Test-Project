@@ -17,7 +17,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import tests.loginTests.test_validLogin as login
-import constants.globalConstants as gc
+import constants.my_experiences_page_constants as gc
 from time import sleep
 
 class TestAddExperience():

@@ -11,11 +11,10 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
 import tests.loginTests.test_validLogin as login
-import constants.globalConstants as gc
 from pages.my_personal_info_page import MyPersonalInfoPage
 from time import sleep
 
-class TestInvalidLessIdentification():
+class TestLessIdentification():
   def setup_method(self):
     # as a precondition user should be logged in
     valid_login = login.TestvalidLogin() 
@@ -30,7 +29,7 @@ class TestInvalidLessIdentification():
     self.driver.quit()
   
   #@pytest.mark.skip()
-  def test_invalidLessIdentification(self):
+  def test_lessIdentification(self):
     self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/kisisel-bilgilerim")
 
     first_name = MyPersonalInfoPage.get_firstname_element(self)

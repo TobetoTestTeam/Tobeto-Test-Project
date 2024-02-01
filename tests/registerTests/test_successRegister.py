@@ -98,7 +98,7 @@ class TestSuccessRegister():
     phoneNumber.send_keys(user_data["registerPhoneNum"])
     
     # click captcha manually with sleep
-    sleep(5)
+    sleep(15)
     # or click when it is working
     # iframe= WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.XPATH,"//iframe[@title='reCAPTCHA']")))
     # self.driver.switch_to.frame(iframe)

@@ -16,9 +16,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from pages.login_page import LoginPage
-import constants.globalConstants as gc 
 
-from constants import globalConstants as gc
 import openpyxl
 
 class TestblankLogin():

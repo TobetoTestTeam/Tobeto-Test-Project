@@ -12,3 +12,5 @@ class LoginPageLocators:
     giris_button = (By.XPATH, lg.GIRIS_BUTTON_XPATH)
     warning_field_mail = (By.XPATH, lg.WARNING_FIELD_MAIL)
     warning_field_pass = (By.CSS_SELECTOR , lg.WARNING_FIELD_PASS)
+
+    toast_message = (By.CSS_SELECTOR, lg.TOAST_MESSAGE_CSS)

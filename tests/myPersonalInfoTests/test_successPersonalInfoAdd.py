@@ -45,8 +45,8 @@ class TestSuccessPersonalInfoAdd():
     phone_number.clear()
     phone_number.send_keys("5141111111")
 
-    birtday = MyPersonalInfoPage.get_birtday_element(self)
-    birtday.send_keys(cc.IDENTITY_BIRTHDATE)
+    birthday = MyPersonalInfoPage.get_birthday_element(self)
+    birthday.send_keys(cc.IDENTITY_BIRTHDATE)
 
     identification_number = MyPersonalInfoPage.get_identificationNumber_element(self)
     identification_number.clear()
@@ -73,7 +73,7 @@ class TestSuccessPersonalInfoAdd():
     
     self.driver.execute_script("window.scrollTo(0,0)")
 
-    toast_message =  WebDriverWait(self.driver, 50).until(ec.presence_of_element_located((By.CSS_SELECTOR, ".toast-body")))
+    page_toast_message =  MyPersonalInfoPage.get_pageToastMessage_element(self)
     
-    assert toast_message.text == "• Bilgileriniz başarıyla güncellendi."
+    assert page_toast_message.text == "• Bilgileriniz başarıyla güncellendi."
     self.driver.close()

@@ -1,6 +1,6 @@
 # Test Senaryosunun Adı: Profil Bilgileri altında kişisel bilgilerin güncellenme kontrolleri 
-# TEST CASE 5: Geçersiz TC kimlik no uyarısı kontrolü
-# *not: TC Kimlik ile eşleşmeyen ad soyad ve doğum tarihi girilirse gelen uyarı
+# TEST CASE 5: Geçersiz TC kimlik no uyarısı kontrolü (TC Kimlik ile eşleşmeyen ad soyad ve doğum tarihi girilirse gelen uyarı)
+# + TEST CASE 4: 11 haneden farklı TC kimlik no uyarıları kontrolü
 
 # Profil Bilgileri -> Kişisel Bilgilerim Sayfası 
 # https://tobeto.com/profilim/profilimi-duzenle/kisisel-bilgilerim
@@ -32,20 +32,9 @@ class TestInvalidIdentification():
   def test_invalidIdentification(self):
     self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/kisisel-bilgilerim")
 
-    first_name = MyPersonalInfoPage.get_firstname_element(self)
-    first_name.clear()
-    first_name.send_keys("TestAd")
-
-    last_name = MyPersonalInfoPage.get_lastname_element(self)
-    last_name.clear()
-    last_name.send_keys("TestSoyad")
-
-    phone_number = MyPersonalInfoPage.get_phoneNumber_element(self)
-    phone_number.clear()
-    phone_number.send_keys("5141111111")
-
-    birtday = MyPersonalInfoPage.get_birtday_element(self)
-    birtday.send_keys("01.01.2000")
+    # TEST CASE5:
+    birthday = MyPersonalInfoPage.get_birthday_element(self)
+    birthday.send_keys("01.01.2000")
 
     identification_number = MyPersonalInfoPage.get_identificationNumber_element(self)
     identification_number.clear()
@@ -70,12 +59,22 @@ class TestInvalidIdentification():
     #save_button.click()
     self.driver.execute_script("arguments[0].click();", save_button)
     
-    
     self.driver.execute_script("window.scrollTo(0,0)")
     
-
-    toast_message =  WebDriverWait(self.driver, 50).until(ec.presence_of_element_located((By.CSS_SELECTOR, ".toast-body")))
-    
-    assert toast_message.text == "• Kimlik bilgilerinizi hatalı girdiniz."
+    page_toast_message =  MyPersonalInfoPage.get_pageToastMessage_element(self)
+    assert page_toast_message.text == "• Kimlik bilgilerinizi hatalı girdiniz."
     sleep(5)
-    self.driver.close()
+    
+    # TEST CASE4:
+    identification_number = MyPersonalInfoPage.get_identificationNumber_element(self)
+    identification_number.clear()
+    identification_number.send_keys("111") 
+    invalid_identification_alert_message = MyPersonalInfoPage.get_invalid_identificationAlertMessage_element(self)
+    assert invalid_identification_alert_message.text == "TC Kimlik Numarası 11 Haneden Az olamaz"
+    sleep(5)
+
+    identification_number.clear()
+    identification_number.send_keys("111111111111") 
+    invalid_identification_alert_message = MyPersonalInfoPage.get_invalid_identificationAlertMessage_element(self)
+    assert invalid_identification_alert_message.text == "TC Kimlik Numarası 11 Haneden Fazla olamaz"
+    sleep(5)

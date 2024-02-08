@@ -11,7 +11,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import tests.loginTests.test_validLogin as login
-from pages.certificate_page import CertificatePage
+from pages.my_certificates_page import CertificatePage
 from time import sleep
 
 

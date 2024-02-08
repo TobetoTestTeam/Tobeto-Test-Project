@@ -8,7 +8,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 from time import sleep
-from pages.certificate_page import CertificatePage
+from pages.my_certificates_page import CertificatePage
 import tests.loginTests.test_validLogin as login
 
 class TestDeletecertificate():

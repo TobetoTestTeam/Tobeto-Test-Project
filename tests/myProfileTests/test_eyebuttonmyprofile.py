@@ -11,10 +11,10 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 from time import sleep
-from pages.my_certificates_page import CertificatePage
+from pages.my_profile_page import MyProfilePage
 import tests.loginTests.test_validLogin as login
 
-class TestDowlandcertificate():
+class TestEyebuttonmyprofile():
   def setup_method(self, method):
     valid_login = login.TestvalidLogin()
     valid_login.setup_method()
@@ -24,11 +24,14 @@ class TestDowlandcertificate():
   def teardown_method(self, method):
     self.driver.quit()
   
-  def test_dowlandcertificate(self):
-    self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/sertifikalarim")
-    #self.driver.set_window_size(1382, 744)
+  def test_eyebuttonmyprofile(self):
+    self.driver.get("https://tobeto.com/profilim")
+    #self.driver.set_window_size(1366, 728)
+    self.driver.execute_script("window.scrollTo(0,0)")
+    eye_button=MyProfilePage.get_eye_button_element(self)
+    eye_button.click()
+    #self.driver.execute_script("window.scrollTo(0,0)")
+    result_page=MyProfilePage.get_result_page_element(self)
+    assert result_page.text == "Analiz Raporum"
     sleep(5)
-    dowland_button=CertificatePage.get_dowland_button_element(self)
-    dowland_button.click()
-    
   

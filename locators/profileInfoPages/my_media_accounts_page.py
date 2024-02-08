@@ -17,3 +17,7 @@ class add_media_acconts_Locators:
     delete_no_button=(By.XPATH,map.DELETE_NO_BUTTON_XPATH)
     delete_toast_body=(By.XPATH,map.DELETE_TOAST_BODY_XPATH)
     media_3_message=(By.CSS_SELECTOR,map.MEDIA_3_MESSAGE_CSS)
+    pencil_button=(By.XPATH,map.PENCIL_BUTTON_XPATH)
+    edit_text=(By.XPATH,map.EDIT_TEXT_XPATH)
+    update_button=(By.XPATH,map.UPDATE_BUTTON_XPATH)
+    update_toast_body=(By.XPATH,map.DELETE_TOAST_BODY_XPATH)

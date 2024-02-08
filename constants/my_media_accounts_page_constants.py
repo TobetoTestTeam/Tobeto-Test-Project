@@ -15,3 +15,9 @@ DELETE_YES_BUTTON_XPATH="//button[2]"
 DELETE_NO_BUTTON_XPATH="//div/div/div/div/span[2]"
 DELETE_TOAST_BODY_XPATH="//*[@id=\'__next\']/div/div[2]/div/div[2]"
 MEDIA_3_MESSAGE_CSS=".col-12 > span"
+#GÜNCELLEME İÇİN;
+PENCIL_BUTTON_XPATH="//div[@id=\'__next\']/div/main/section/div/div/div[2]/div[2]/div/btn[2]/i"
+EDIT_TEXT_XPATH="//div[2]/input"
+UPDATE_BUTTON_XPATH="//button[contains(.,\'Güncelle\')]"
+UPDATE_TOAST_BODY_XPATH="//div[@id=\'__next\']/div/div[2]/div/div"
+

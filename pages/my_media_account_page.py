@@ -43,3 +43,16 @@ class MediaAccountPage:
     
     def get_3media_account_element(self):
         return  WebDriverWait(self.driver, 0.5).until(ec.visibility_of_element_located((ma_locate.media_3_message)))
+    
+    def get_pencil_button_element(self):
+        return WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((ma_locate.pencil_button)))
+    
+    def get_edit_text_element(self):
+        return WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((ma_locate.edit_text)))
+    
+    def get_update_button_element(self):
+        return WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((ma_locate.update_button)))
+    
+    def get_update_toastbody_element(self):
+        return WebDriverWait(self.driver, 0,5).until(ec.presence_of_element_located((ma_locate.update_toast_body)))
+    

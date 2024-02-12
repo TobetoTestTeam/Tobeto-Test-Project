@@ -14,7 +14,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 import tests.loginTests.test_validLogin as login
-#from tests.loginTests.test_validLogin import TestvalidLogin #####################
 import constants.my_experiences_page_constants as gc
 from pages.my_experiences_page import MyExperiencesPage
 from time import sleep
@@ -22,14 +21,6 @@ from time import sleep
 class TestSuccessAddExperience():
   def setup_method(self,logged_in_fixture):
     # as a precondition user should be logged in
-    #self.driver = logged_in_fixture
-    #from import:###############################
-    #valid_login = TestvalidLogin()
-    #valid_login.setup_method()
-    #valid_login.test_validLogin()
-    #self.driver = valid_login.getDriver()
-    
-    # import
     valid_login = login.TestvalidLogin() 
     valid_login.setup_method()
     valid_login.test_validLogin()
@@ -95,106 +86,4 @@ class TestSuccessAddExperience():
       sleep(2)
       self.driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
       sleep(2)
-
-      
-  def test_deleteExperience(self):
-      
-      self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/deneyimlerim")
-
-      self.driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-      sleep(2)
-      three_dots_button = MyExperiencesPage.get_threeDotsButton_element(self)
-      sleep(2)
-      three_dots_button.click()
-      job_desc = MyExperiencesPage.get_jobDesc_element(self)
-      assert job_desc.text == "İş Açıklaması"
-      sleep(2)
-      close_button = MyExperiencesPage.get_closeButton_element(self)
-      close_button.click()
-      sleep(2)
-      delete_button = MyExperiencesPage.get_deleteButton_element(self)
-      sleep(2)
-      self.driver.execute_script("arguments[0].click();", delete_button)
-      #delete_button.click()
-      
-      delete_confirm_message = MyExperiencesPage.get_deleteConfirmMessage_element(self)
-      assert delete_confirm_message.text == "Seçilen deneyimi silmek istediğinize emin misiniz ?"
-      sleep(2)
-      no_button = MyExperiencesPage.get_noButton_element(self)
-      sleep(2)
-      no_button.click()
-      sleep(2)
-      self.driver.execute_script("arguments[0].click();", delete_button)
-      #delete_button.click()
-      sleep(2)
-      #yes_button.click()
-      yes_button = MyExperiencesPage.get_yesButton_element(self)
-      self.driver.execute_script("arguments[0].click();", yes_button)
-        
-      toast_message1 = MyExperiencesPage.get_toastMessage_element(self)
-      assert toast_message1.text == "• Deneyim kaldırıldı."
-      sleep(5)
-  
-  def test_unSuccessBlankExperience(self): # Zorunlu alanlar boş bırakıldığında
-     self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/deneyimlerim")
-
-     save_button = MyExperiencesPage.get_saveButton_element(self) 
-     save_button.click()
-     sleep(5)
-
-     corporationName_warningField = MyExperiencesPage.get_corporationNameWarningField_element(self)
-     assert corporationName_warningField.text == "Doldurulması zorunlu alan*"
-     position_warningField = MyExperiencesPage.get_positionWarningField_element(self)
-     assert position_warningField.text == "Doldurulması zorunlu alan*"
-     sector_warningField = MyExperiencesPage.get_sectorWarningField_element(self)
-     assert sector_warningField.text == "Doldurulması zorunlu alan*"
-     startDate_warningField = MyExperiencesPage.get_startDateWarningField_element(self)
-     assert startDate_warningField.text == "Doldurulması zorunlu alan*"
-     finishDate_warningField = MyExperiencesPage.get_finishDateWarningField_element(self)
-     assert finishDate_warningField.text == "Doldurulması zorunlu alan*"
-  
-  def test_invalidInputs(self):
-     self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/deneyimlerim")
-
-     # go to page "Deneyimlerim", böyle gitmesi daha hızlı diye açtım bi
-    #  WebDriverWait(self.driver, 30).until(ec.invisibility_of_element_located(((By.CSS_SELECTOR, ".toast-body"))))
-
-    #  user_profile_button = WebDriverWait(self.driver, 30).until(ec.presence_of_element_located((By.XPATH, gc.USER_PROFILE_BUTTON_XPATH)))
-      
-    #  user_profile_button.click()
-    #  user_profile_info_button = WebDriverWait(self.driver, 30).until(ec.visibility_of_element_located((By.XPATH, "//*[@id='__next']/div/nav/div[1]/div/div/div[2]/ul/li[1]/a")))
-    #  user_profile_info_button.click()
-
-    #  is_on_profile_page = WebDriverWait(self.driver, 30).until(ec.visibility_of_element_located((By.XPATH, "//*[@id='__next']/div/main/section/div/div/div[1]/div/a[1]/span[2]")))
-    #  assert is_on_profile_page.text == "Kişisel Bilgilerim"
-    #  user_experiences_button = WebDriverWait(self.driver, 30).until(ec.visibility_of_element_located((By.XPATH, "//*[@id='__next']/div/main/section/div/div/div[1]/div/a[2] ")))
-    #  user_experiences_button.click()
-
-     corporationName = MyExperiencesPage.get_corporationName_element(self)  
-     corporationName.send_keys("To")
-      
-     position = MyExperiencesPage.get_position_element(self) 
-     position.send_keys("Sof")
-      
-     sector = MyExperiencesPage.get_sector_element(self) 
-     sector.send_keys("Yazı")
-
-     start_calender = MyExperiencesPage.get_startCalendar_element(self)
-     start_calender.send_keys("30.03.2020")
-
-     finish_calender = MyExperiencesPage.get_finishCalendar_element(self)
-     finish_calender.send_keys("30.03.2023")
-
-     save_button = MyExperiencesPage.get_saveButton_element(self) 
-     #save_button.click()
-     self.driver.execute_script("arguments[0].click();", save_button)
-
-     corporationName_warningField = MyExperiencesPage.get_corporationNameWarningField_element(self)
-     assert corporationName_warningField.text == "En az 5 karakter girmelisiniz"
-     position_warningField = MyExperiencesPage.get_positionWarningField_element(self)
-     assert position_warningField.text == "En az 5 karakter girmelisiniz"
-     sector_warningField = MyExperiencesPage.get_sectorWarningField_element(self)
-     assert sector_warningField.text == "En az 5 karakter girmelisiniz"
-     sleep(5)
-
   

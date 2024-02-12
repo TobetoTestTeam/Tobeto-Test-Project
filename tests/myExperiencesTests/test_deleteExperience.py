@@ -41,7 +41,8 @@ class TestDeleteExperience():
       sleep(2)
       three_dots_button = MyExperiencesPage.get_threeDotsButton_element(self)
       sleep(2)
-      three_dots_button.click()
+      self.driver.execute_script("arguments[0].click();", three_dots_button)
+      #three_dots_button.click()
       job_desc = MyExperiencesPage.get_jobDesc_element(self)
       assert job_desc.text == "İş Açıklaması"
       sleep(2)

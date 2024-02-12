@@ -18,7 +18,7 @@ import constants.my_experiences_page_constants as gc
 from pages.my_experiences_page import MyExperiencesPage
 from time import sleep
 
-class TestUnsuccessAddBlankExperience():
+class TestAddUnsuccessBlankExperience():
   def setup_method(self,logged_in_fixture):
     # as a precondition user should be logged in
     valid_login = login.TestvalidLogin() 
@@ -33,7 +33,7 @@ class TestUnsuccessAddBlankExperience():
     self.driver.quit()
     
   #@pytest.mark.skip()
-  def test_unSuccessAddBlankExperience(self): # Zorunlu alanlar boş bırakıldığında
+  def test_addUnSuccessBlankExperience(self): # Zorunlu alanlar boş bırakıldığında
      self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/deneyimlerim")
 
      save_button = MyExperiencesPage.get_saveButton_element(self) 

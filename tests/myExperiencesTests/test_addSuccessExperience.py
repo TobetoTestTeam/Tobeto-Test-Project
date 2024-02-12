@@ -18,7 +18,7 @@ import constants.my_experiences_page_constants as gc
 from pages.my_experiences_page import MyExperiencesPage
 from time import sleep
 
-class TestSuccessAddExperience():
+class TestAddSuccessExperience():
   def setup_method(self,logged_in_fixture):
     # as a precondition user should be logged in
     valid_login = login.TestvalidLogin() 
@@ -33,7 +33,7 @@ class TestSuccessAddExperience():
     self.driver.quit()
     
   #@pytest.mark.skip()
-  def test_successAddExperience(self):
+  def test_addSuccessExperience(self):
     
       # go to page "Deneyimlerim"
       #WebDriverWait(self.driver, 30).until(ec.invisibility_of_element_located(((By.CSS_SELECTOR, ".toast-body"))))

@@ -7,7 +7,7 @@ LAST_NAME_BYNAME = "lastName"
 EMAIL_BYNAME = "email"
 PASSWORD_BYNAME = "password"
 PASSWORD_AGAIN_BYNAME = "passwordAgain"
-REGISTOR_BUTTON_XPATH = "//button[contains(.,'Kayıt Ol')]"
+REGISTER_BUTTON_XPATH = "//button[contains(.,'Kayıt Ol')]"
 
 INVALID_EMAIL_ALERT_XPATH = "//*[@id='__next']/div/main/section/div/div/div[1]/div/div/form/p"
 

@@ -1,5 +1,5 @@
 # Test Senaryosunun Adı: Profil Bilgileri altında kişisel bilgilerin güncellenme kontrolleri 
-# TEST CASE 4: Eksik karakterli TC kimlik no uyarısı kontrolü
+# TEST CASE 2: Başarılı kişisel bilgi ekleme/güncelleme kontrolü
 
 # Profil Bilgileri -> Kişisel Bilgilerim Sayfası 
 # https://tobeto.com/profilim/profilimi-duzenle/kisisel-bilgilerim
@@ -11,11 +11,11 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
 import tests.loginTests.test_validLogin as login
-import constants.globalConstants as gc
+import constants.credentials_constants as cc
 from pages.my_personal_info_page import MyPersonalInfoPage
 from time import sleep
 
-class TestInvalidLessIdentification():
+class TestSuccessPersonalInfoAdd():
   def setup_method(self):
     # as a precondition user should be logged in
     valid_login = login.TestvalidLogin() 
@@ -29,28 +29,28 @@ class TestInvalidLessIdentification():
   def teardown_method(self):
     self.driver.quit()
   
-  #@pytest.mark.skip()
-  def test_invalidLessIdentification(self):
+  @pytest.mark.skip()
+  def test_successPersonalInfoAdd(self):
     self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/kisisel-bilgilerim")
 
     first_name = MyPersonalInfoPage.get_firstname_element(self)
     first_name.clear()
-    first_name.send_keys("TestAd")
+    first_name.send_keys(cc.IDENTITY_NAME)
 
     last_name = MyPersonalInfoPage.get_lastname_element(self)
     last_name.clear()
-    last_name.send_keys("TestSoyad")
+    last_name.send_keys(cc.IDENTITY_SURNAME)
 
     phone_number = MyPersonalInfoPage.get_phoneNumber_element(self)
     phone_number.clear()
     phone_number.send_keys("5141111111")
 
-    birtday = MyPersonalInfoPage.get_birtday_element(self)
-    birtday.send_keys("01.01.2000")
+    birthday = MyPersonalInfoPage.get_birthday_element(self)
+    birthday.send_keys(cc.IDENTITY_BIRTHDATE)
 
     identification_number = MyPersonalInfoPage.get_identificationNumber_element(self)
     identification_number.clear()
-    identification_number.send_keys("111") # 89636578955
+    identification_number.send_keys(cc.IDENTIFICATION_NUMBER) 
 
     country = MyPersonalInfoPage.get_country_element(self)
     country.send_keys("Türkiye")
@@ -71,11 +71,9 @@ class TestInvalidLessIdentification():
     #save_button.click()
     self.driver.execute_script("arguments[0].click();", save_button)
     
-    #alert_message =  WebDriverWait(self.driver, 5).until(ec.visibility_of_element_located((By.CSS_SELECTOR, ".toast-body")))
-    
     self.driver.execute_script("window.scrollTo(0,0)")
-    sleep(5)
-    alert_message = WebDriverWait(self.driver, 5).until(ec.presence_of_element_located((By.XPATH, "//*[@id='__next']/div/main/section/div/div/div[2]/form/div/div[6]/span[2]")))
+
+    page_toast_message =  MyPersonalInfoPage.get_pageToastMessage_element(self)
     
-    assert alert_message.text == "TC Kimlik Numarası 11 Haneden Az olamaz"
+    assert page_toast_message.text == "• Bilgileriniz başarıyla güncellendi."
     self.driver.close()

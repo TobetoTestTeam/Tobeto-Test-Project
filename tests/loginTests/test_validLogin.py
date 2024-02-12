@@ -25,7 +25,8 @@ class TestvalidLogin():
   def setup_method(self):
     #self.driver = webdriver.Chrome()
     #self.driver.get("https://tobeto.com/giris")
-
+    #self.driver.maximize_window()
+    
     LoginPage.gotoPage(self)
     self.vars = {}
   
@@ -45,6 +46,8 @@ class TestvalidLogin():
     giris_button.click()
     #self.driver.execute_script("arguments[0].click();", register_button1)
 
-    toast_message_text = WebDriverWait(self.driver, 500).until(ec.presence_of_element_located((By.CSS_SELECTOR, ".toast-body"))).text
-    assert toast_message_text == "• Giriş başarılı."
-    sleep(5)
+    #toast_message_text = WebDriverWait(self.driver, 500).until(ec.presence_of_element_located((By.CSS_SELECTOR, ".toast-body"))).text
+    #assert toast_message_text == "• Giriş başarılı."
+    toast_message = LoginPage.get_toastMessage_element(self)
+    assert toast_message.text == "• Giriş başarılı."
+    sleep(2)

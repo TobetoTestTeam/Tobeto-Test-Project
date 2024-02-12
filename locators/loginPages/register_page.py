@@ -11,7 +11,7 @@ class RegisterPageLocators:
     email = (By.NAME, rg.EMAIL_BYNAME)
     password = (By.NAME, rg.PASSWORD_BYNAME)
     password_again = (By.NAME , rg.PASSWORD_AGAIN_BYNAME)
-    register_button = (By.XPATH, rg.REGISTOR_BUTTON_XPATH)
+    register_button = (By.XPATH, rg.REGISTER_BUTTON_XPATH)
 
     # Invalid Email
     invalid_email_alert = (By.XPATH, rg.INVALID_EMAIL_ALERT_XPATH)

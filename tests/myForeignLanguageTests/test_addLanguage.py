@@ -49,7 +49,8 @@ class Test_add_language:
       language_dropdown = self.driver.find_element(By.NAME, "languageName")
       language_dropdown.click()
       sleep(5)
-      language_dropdown.find_element(By.XPATH, "//option[. = 'Almanca']").click()
+      language_dropdown.find_element(By.XPATH, "//option[. = 'İngilizce']").click()
+      #language_dropdown.find_element(By.XPATH, "//option[. = 'Almanca']").click()
       
       #self.driver.find_element(By.XPATH, "xpath=//select[@name='proficiency']").click()
       proficiency_dropdown = self.driver.find_element(By.NAME, "proficiency")

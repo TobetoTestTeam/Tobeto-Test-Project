@@ -19,7 +19,7 @@ from pages.my_experiences_page import MyExperiencesPage
 from time import sleep
 
 class TestDeleteExperience():
-  def setup_method(self,logged_in_fixture):
+  def setup_method(self): 
     # as a precondition user should be logged in
     valid_login = login.TestvalidLogin() 
     valid_login.setup_method()

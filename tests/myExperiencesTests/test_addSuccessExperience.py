@@ -52,28 +52,30 @@ class TestAddSuccessExperience():
       self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/deneyimlerim")
 
       #for i in range(0,100):
+      self.driver.execute_script("window.scrollTo(0,0)")
+      sleep(2)
       corporationName = MyExperiencesPage.get_corporationName_element(self)  
       corporationName.send_keys("Tobeto")
-      
+        
       position = MyExperiencesPage.get_position_element(self)  
       position.send_keys("Test Kalite Yazılım Uzmanı")
-      
+        
       sector = MyExperiencesPage.get_sector_element(self) 
       sector.send_keys("Yazılım")
-      
+        
       select_country_dropdown = MyExperiencesPage.get_countryDropdown_element(self) 
       select_option = select_country_dropdown.find_element(By.XPATH, "//option[. = 'İstanbul']")
       select_option.click()
-        
-      start_calender = MyExperiencesPage.get_startCalendar_element(self) 
+          
+      start_calender = MyExperiencesPage.get_startCalendar_element(self)
       start_calender.click()
-      
+        
       start_date = MyExperiencesPage.get_startDate_element(self) 
       start_date.click()
-      
+        
       finish_calender = MyExperiencesPage.get_finishCalendar_element(self) 
       finish_calender.click()
-        
+          
       finish_date = MyExperiencesPage.get_finishDate_element(self) 
       finish_date.click()
 

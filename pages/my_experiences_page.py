@@ -35,8 +35,14 @@ class MyExperiencesPage:
     def get_startCalendar_element(self):
         return WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(mg_locate.START_CALENDAR))
     
-    def get_startDate_element(self):
-        return WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(mg_locate.START_DATE))
+    def get_startMonth_element(self): ############################
+        return WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(mg_locate.START_MONTH))
+    
+    def get_startYear_element(self): 
+        return WebDriverWait(self.driver, 5).until(ec.presence_of_element_located(mg_locate.START_YEAR))
+    
+    def get_startDay_element(self):
+        return WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(mg_locate.START_DAY))
     
     def get_finishCalendar_element(self):
         return WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(mg_locate.FINISH_CALENDAR))

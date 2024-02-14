@@ -19,7 +19,7 @@ from pages.my_experiences_page import MyExperiencesPage
 from time import sleep
 
 class TestAddSuccessExperience():
-  def setup_method(self,logged_in_fixture):
+  def setup_method(self):
     # as a precondition user should be logged in
     valid_login = login.TestvalidLogin() 
     valid_login.setup_method()
@@ -55,7 +55,7 @@ class TestAddSuccessExperience():
       self.driver.execute_script("window.scrollTo(0,0)")
       sleep(2)
       corporationName = MyExperiencesPage.get_corporationName_element(self)  
-      corporationName.send_keys(i+1,"Tobeto") 
+      corporationName.send_keys("Tobeto") 
             
       position = MyExperiencesPage.get_position_element(self)  
       position.send_keys("Yazılım Kalite ve Test Uzmanı")

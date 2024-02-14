@@ -51,35 +51,43 @@ class TestAddSuccessExperience():
       
       self.driver.get("https://tobeto.com/profilim/profilimi-duzenle/deneyimlerim")
 
-      #for i in range(0,100):
+      #for i in range(0,150):
       self.driver.execute_script("window.scrollTo(0,0)")
       sleep(2)
       corporationName = MyExperiencesPage.get_corporationName_element(self)  
-      corporationName.send_keys("Tobeto")
-        
+      corporationName.send_keys(i+1,"Tobeto") 
+            
       position = MyExperiencesPage.get_position_element(self)  
-      position.send_keys("Test Kalite Yazılım Uzmanı")
-        
+      position.send_keys("Yazılım Kalite ve Test Uzmanı")
+            
       sector = MyExperiencesPage.get_sector_element(self) 
       sector.send_keys("Yazılım")
-        
+            
       select_country_dropdown = MyExperiencesPage.get_countryDropdown_element(self) 
       select_option = select_country_dropdown.find_element(By.XPATH, "//option[. = 'İstanbul']")
       select_option.click()
-          
+      
       start_calender = MyExperiencesPage.get_startCalendar_element(self)
       start_calender.click()
-        
-      start_date = MyExperiencesPage.get_startDate_element(self) 
-      start_date.click()
-        
+
+      start_month = MyExperiencesPage.get_startMonth_element(self) ####################
+      start_month.click()
+      start_month.find_element(By.XPATH, "//option[. = 'Ocak']").click()
+
+      start_year = MyExperiencesPage.get_startYear_element(self)
+      start_year.click()
+      start_year.find_element(By.XPATH, "//option[. = '2020']").click()
+            
+      start_day = MyExperiencesPage.get_startDay_element(self) 
+      start_day.click()
+            
       finish_calender = MyExperiencesPage.get_finishCalendar_element(self) 
       finish_calender.click()
-          
+              
       finish_date = MyExperiencesPage.get_finishDate_element(self) 
       finish_date.click()
 
-      sleep(5)
+      sleep(2)
       save_button = MyExperiencesPage.get_saveButton_element(self) 
       save_button.click()
 

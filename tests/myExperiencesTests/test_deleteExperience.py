@@ -53,7 +53,7 @@ class TestDeleteExperience():
       sleep(2)
       self.driver.execute_script("arguments[0].click();", delete_button)
       #delete_button.click()
-      
+        
       delete_confirm_message = MyExperiencesPage.get_deleteConfirmMessage_element(self)
       assert delete_confirm_message.text == "Seçilen deneyimi silmek istediğinize emin misiniz ?"
       sleep(2)
@@ -67,10 +67,12 @@ class TestDeleteExperience():
       #yes_button.click()
       yes_button = MyExperiencesPage.get_yesButton_element(self)
       self.driver.execute_script("arguments[0].click();", yes_button)
-        
+          
       toast_message1 = MyExperiencesPage.get_toastMessage_element(self)
       assert toast_message1.text == "• Deneyim kaldırıldı."
-      sleep(5)
+      sleep(2)
+      self.driver.execute_script("window.scrollTo(0,0)")
+      sleep(2)
   
 
   

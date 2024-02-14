@@ -55,8 +55,13 @@ class TestAddSuccessExperience():
       self.driver.execute_script("window.scrollTo(0,0)")
       sleep(2)
       corporationName = MyExperiencesPage.get_corporationName_element(self)  
+<<<<<<< Updated upstream
       corporationName.send_keys("Tobeto")
         
+=======
+      corporationName.send_keys("Tobeto") 
+            
+>>>>>>> Stashed changes
       position = MyExperiencesPage.get_position_element(self)  
       position.send_keys("Test Kalite Yazılım Uzmanı")
         

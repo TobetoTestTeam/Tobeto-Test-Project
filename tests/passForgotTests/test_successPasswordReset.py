@@ -23,7 +23,7 @@ class TestSuccessPasswordReset():
     
     sifremi_unuttum_textbox = ForgotPaswordPage.get_forgotPasswordTextbox_element(self)
     sifremi_unuttum_textbox.send_keys("test@gmail.com")
-    ######################### DÜZENLENECEK ###########
+
     gonder_button = WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".btn:nth-child(3)")))
     gonder_button.click()
     
